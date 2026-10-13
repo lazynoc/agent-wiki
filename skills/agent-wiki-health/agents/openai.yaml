@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Wiki Health"
+  short_description: "See where the wiki is thin or stale"
+  default_prompt: "Use $agent-wiki-health to tell me what the wiki needs next."

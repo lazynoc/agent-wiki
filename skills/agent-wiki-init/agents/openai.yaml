@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Wiki Init"
+  short_description: "Start an empty wiki in a folder"
+  default_prompt: "Use $agent-wiki-init to start a new wiki."

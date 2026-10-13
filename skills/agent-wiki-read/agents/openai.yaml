@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Wiki Read"
+  short_description: "Answer a question from the wiki"
+  default_prompt: "Use $agent-wiki-read to answer this from the wiki."

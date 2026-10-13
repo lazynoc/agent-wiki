@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Wiki Lint"
+  short_description: "Check the wiki for broken links and shape"
+  default_prompt: "Use $agent-wiki-lint to check the wiki."
