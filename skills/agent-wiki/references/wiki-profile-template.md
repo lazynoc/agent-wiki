@@ -36,7 +36,7 @@ Folders the assistant never edits or checks:
 
 ## Freshness
 
-A section with no log entry in 90 days is flagged by `agent-wiki-health`.
+A section with no log entry in 90 days is flagged by `agent-wiki-catch-up`.
 Change the number here if this wiki moves faster or slower.
 
 ## Extra fields

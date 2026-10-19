@@ -1,6 +1,6 @@
 ---
 name: agent-wiki-read
-description: Use whenever a question might be answered by the wiki, including "what does the wiki say about", "do we have anything on", "how does X work here", and follow-up questions in the same conversation. Its navigation steps are also how agent-wiki-write finds existing pages. Not for changing pages, and not for checking links or wiki health.
+description: Use whenever a question might be answered by the wiki, including "what does the wiki say about", "do we have anything on", "how does X work here", and follow-up questions in the same conversation. Its navigation steps are also how agent-wiki-write finds existing pages. Not for changing pages, and not for checking links or catching the wiki up.
 ---
 
 # Agent Wiki: Read
@@ -58,10 +58,10 @@ more when the new question needs them.
 - The user is giving you new knowledge or a correction: `agent-wiki-write`.
 - The user asks whether links or files are broken: `agent-wiki-lint`.
 - The user asks what the wiki is missing or where it is stale:
-  `agent-wiki-health`.
+  `agent-wiki-catch-up`.
 
 ## Hand off to
 
 - `agent-wiki-write` when the user supplies or confirms something the wiki lacks.
 - `agent-wiki-lint` when a link is dead or an index entry points nowhere.
-- `agent-wiki-health` when the same area keeps failing to answer.
+- `agent-wiki-catch-up` when the same area keeps failing to answer.

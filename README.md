@@ -41,7 +41,7 @@ work to the right one.
 | "Add this document" or "That's wrong, it should be…" | Finds the page that owns the topic, says what it will change, waits for your yes, then writes it and keeps the indexes and logs in step. A copy of the document, or a note of what you said, goes in `raw/`. |
 | "This page changed, here's the new version" | Compares it with the copy in `raw/`, shows the old line, the new line and the pages that state it, and waits for your yes. |
 | "Check the wiki" | Reports broken links, missing index lines and missing headers, and offers to fix them. |
-| "What should we write next?" | Reads the open questions and the logs and gives you a short to-do list. |
+| "Catch up" or "What should we write next?" | Compares changed sources with their copies in `raw/`, reads the open questions and the logs, and gives you a short to-do list. |
 
 ## What it looks like on disk
 
@@ -78,7 +78,7 @@ skills/
   agent-wiki-read/     answer from the wiki, with sources
   agent-wiki-write/    add or correct knowledge, after your yes
   agent-wiki-lint/     check links, indexes and headers
-  agent-wiki-health/   find what is missing or stale
+  agent-wiki-catch-up/ what changed, what is stale or missing
 ```
 
 Each one is a short Markdown file you can read in a minute. Change them to fit

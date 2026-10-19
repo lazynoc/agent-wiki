@@ -1,6 +1,6 @@
 ---
 name: agent-wiki-write
-description: Use when confirmed knowledge should go into the wiki or a page should be corrected, such as "add this to the wiki", "ingest this document", "update the page on X", "this source changed", or "that's wrong, it should be". Reads first, proposes, then writes. Not for answering questions from existing pages or for checking wiki health.
+description: Use when confirmed knowledge should go into the wiki or a page should be corrected, such as "add this to the wiki", "ingest this document", "update the page on X", "this source changed", or "that's wrong, it should be". Reads first, proposes, then writes. Not for answering questions from existing pages or for catching the wiki up with what changed.
 ---
 
 # Agent Wiki: Write
@@ -90,4 +90,4 @@ that may already own the concept. If the user gave a document, read all of it.
 ## Hand off to
 
 - `agent-wiki-lint` after a large write or a new section.
-- `agent-wiki-health` when the write revealed several thin areas.
+- `agent-wiki-catch-up` when the write revealed several thin areas.

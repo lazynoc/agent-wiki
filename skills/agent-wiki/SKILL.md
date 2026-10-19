@@ -1,6 +1,6 @@
 ---
 name: agent-wiki
-description: Start here for anything to do with an agent wiki, a folder of plain Markdown pages your AI assistant reads, writes, and keeps current. Use for "start a wiki", any question the wiki might answer, "add this to the wiki", "that's wrong, it should be", "check the wiki", and "what should we write next". Picks the right agent-wiki skill and hands the work on.
+description: Start here for anything to do with an agent wiki, a folder of plain Markdown pages your AI assistant reads, writes, and keeps current. Use for "start a wiki", any question the wiki might answer, "add this to the wiki", "that's wrong, it should be", "check the wiki", "catch up", and "what should we write next". Picks the right agent-wiki skill and hands the work on.
 ---
 
 # Agent Wiki
@@ -30,7 +30,7 @@ folder next to this one.
 | Know something the wiki might answer | Read | `../agent-wiki-read/SKILL.md` |
 | Add knowledge, put a document or a new version of one in, or correct a page | Write | `../agent-wiki-write/SKILL.md` |
 | Check links, indexes, and file shapes | Lint | `../agent-wiki-lint/SKILL.md` |
-| Know what is missing, thin, or stale, or what to write next | Health | `../agent-wiki-health/SKILL.md` |
+| Catch the wiki up: a source changed, or know what is missing, thin, or stale | Catch-up | `../agent-wiki-catch-up/SKILL.md` |
 
 If the request mixes two, do them in this order: Read, then Write, then
 Lint. If you cannot tell which one fits, ask one short question.
@@ -42,14 +42,14 @@ Init ──▶ Write
 Read ──▶ Write   when the user confirms something the wiki lacks
 Read ──▶ gaps.md when no page answers (then offer Write)
 Write ─▶ Lint    after a large write or a new section
-Lint ──▶ Health  when the structure is fine but the worry is content
-Health ▶ Write   for each item the user picks
+Lint ──▶ Catch-up when the structure is fine but the worry is content
+Catch-up ▶ Write   for each item the user picks
 ```
 
 - **Read before you write.** Write always starts by finding the page that
   may already own the concept, using Read's navigation steps.
 - **Propose, then wait.** Write says which page it will change and how, and
-  waits for yes. Lint reports, and fixes only on yes. Health never edits.
+  waits for yes. Lint reports, and fixes only on yes. Catch-up never edits.
 - **One skill at a time.** Finish the current skill's steps, report, then
   hand on. Do not run two skills' writes in one step.
 - **Say what you used.** Every answer ends with the pages it came from, or

@@ -94,7 +94,7 @@ conventional, not checked.
 ```
 
 Read appends when it cannot answer. Write removes the line when a page now
-answers it. Health turns the list into a to-do.
+answers it. Catch-up turns the list into a to-do.
 
 ## Core rules
 

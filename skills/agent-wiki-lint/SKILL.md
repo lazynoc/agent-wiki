@@ -1,6 +1,6 @@
 ---
 name: agent-wiki-lint
-description: Use for a mechanical check of the wiki's files, such as "check the wiki", "are the links ok", "anything broken", or after a large write. Finds broken links, orphan pages, missing headers, and indexes out of step with pages. Not for judging whether content is stale or missing; that is agent-wiki-health.
+description: Use for a mechanical check of the wiki's files, such as "check the wiki", "are the links ok", "anything broken", or after a large write. Finds broken links, orphan pages, missing headers, and indexes out of step with pages. Not for judging whether content is stale or missing; that is agent-wiki-catch-up.
 ---
 
 # Agent Wiki: Lint
@@ -54,14 +54,14 @@ that and let the user decide.
 - Never edit without a yes.
 - Never touch `raw/`.
 - Lint does not read for meaning. Thin, stale, or vague content is a
-  `agent-wiki-health` finding, not a lint finding.
+  `agent-wiki-catch-up` finding, not a lint finding.
 
 ## When not to use
 
-- "What should we write next" or "is X out of date": `agent-wiki-health`.
+- "What should we write next" or "is X out of date": `agent-wiki-catch-up`.
 - A question about content: `agent-wiki-read`.
 
 ## Hand off to
 
-- `agent-wiki-health` when structure is fine but the user's real worry is
+- `agent-wiki-catch-up` when structure is fine but the user's real worry is
   content.
