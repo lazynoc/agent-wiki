@@ -1,4 +1,0 @@
-interface:
-  display_name: "Agent Wiki Write"
-  short_description: "Add or correct knowledge in the wiki"
-  default_prompt: "Use $agent-wiki-write to add this to the wiki."

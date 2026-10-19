@@ -1,4 +1,0 @@
-interface:
-  display_name: "Agent Wiki"
-  short_description: "Start, ask, add to, or check your wiki"
-  default_prompt: "Use $agent-wiki for this."
