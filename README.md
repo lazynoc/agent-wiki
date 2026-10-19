@@ -50,7 +50,8 @@ the work to the right one.
 | --- | --- | --- |
 | "Start a wiki at `./wiki` for refunds" | Init | Creates the folder and starter files, then stops. |
 | "What's our refund window for annual plans?" | Read | Reads the index, then the right pages, and answers with the pages it used. If no page covers it, it says so and notes the question in `gaps.md`. |
-| "Add this document" or "that's wrong, it should be…" | Write | Finds the page that owns the topic, tells you what it will change, waits for your yes, then writes it and keeps the indexes and logs in step. |
+| "Add this document" or "that's wrong, it should be…" | Write | Finds the page that owns the topic, tells you what it will change, waits for your yes, then writes it and keeps the indexes and logs in step. Keeps a copy of the document, or a note of what you said, in `raw/`. |
+| "This page changed, here's the new version" | Write | Compares it with the copy in `raw/`, shows the old line, the new line and the pages that state it, and waits for your yes. The log records what changed, where, and from which version. |
 | "Check the wiki" | Lint | Reports broken links, missing index lines, and missing headers, and offers to fix them. |
 | "What should we write next?" | Health | Reads the open questions and logs and gives you a short to-do list. |
 
@@ -76,7 +77,8 @@ wiki/
     billing-table.md
     log.md
     source-register.md
-  raw/                  original documents, kept exactly as they arrived
+  raw/                  documents, and notes of what you said, kept exactly
+                        as they arrived (code stays in its own repository)
 ```
 
 See [`example/acme-wiki`](example/acme-wiki) for a small, made-up wiki: a

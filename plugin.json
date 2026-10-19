@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "agent-wiki",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A wiki your AI agent reads, writes, and keeps current. Plain Markdown files in a folder; you approve every change.",
   "author": {
     "name": "Mukul Malik"

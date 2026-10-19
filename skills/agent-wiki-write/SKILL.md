@@ -1,6 +1,6 @@
 ---
 name: agent-wiki-write
-description: Use when confirmed knowledge should go into the wiki or a page should be corrected, such as "add this to the wiki", "ingest this document", "update the page on X", or "that's wrong, it should be". Reads first, proposes, then writes. Not for answering questions from existing pages or for checking wiki health.
+description: Use when confirmed knowledge should go into the wiki or a page should be corrected, such as "add this to the wiki", "ingest this document", "update the page on X", "this source changed", or "that's wrong, it should be". Reads first, proposes, then writes. Not for answering questions from existing pages or for checking wiki health.
 ---
 
 # Agent Wiki: Write
@@ -25,7 +25,11 @@ that may already own the concept. If the user gave a document, read all of it.
    already owns the concept, propose updating it, not a new page. Wait for
    yes, even when the user's message was itself an instruction; the
    proposal is what lets them catch a wrong page or section before it is
-   written.
+   written. If the source is a newer version of one in the source register,
+   first compare it with the earlier copy in `raw/` (for code, with the
+   commit or date the register records) and propose only what changed: the
+   old line, the new line, and each page that states it. If you cannot tell
+   what changed or which version is newer, ask.
 2. **Write the page.** Start with the standard header: `type`, `title`, a
    description written in the words a future asker would use, and tags
    covering aliases and acronyms. Use simple, specific English. Use headings
@@ -42,15 +46,26 @@ that may already own the concept. If the user gave a document, read all of it.
 4. **Bookkeeping, always, in this order:**
    - Section `index.md`: add, rename, or remove the page's line in the
      `* [Title](file.md) - description` shape.
-   - Section `log.md`: one entry under today's date.
+   - Section `log.md`: one entry under today's date naming the page, what
+     changed, and the source and version it came from.
    - Section `source-register.md`: one row if a source was used.
    - Root `index.md` and the `## Sections` list in `wiki-profile.md`: one
      line each if you created a new section (and create that section's
      index, log, and register as `agent-wiki-init` would).
    - `gaps.md`: remove any line the page now answers.
-5. **Keep the original.** If the source is a file, copy it unchanged into
-   `raw/` and record that path in the register's Location column. Never
-   edit anything in `raw/`.
+5. **Keep the original.** `raw/` holds what the wiki was built from,
+   exactly as it arrived:
+   - A document (an exported page, a PDF, meeting notes): copy it unchanged
+     into `raw/`. A newer version goes in beside the old one, with its date
+     or version in the file name.
+   - Something the user told you that no file holds: save their words
+     unchanged as a dated note, for example
+     `raw/2026-10-15-note-store-eligibility.md`.
+   - Code, or anything else that keeps its own history: read it where it
+     is, and record its location and the commit or date you read.
+
+   Record each in the register's Location and Version columns. Never edit
+   anything in `raw/`.
 6. **Report** what changed, which pages hold it, and any gap left.
 
 ## Rules

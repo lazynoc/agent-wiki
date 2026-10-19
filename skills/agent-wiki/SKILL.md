@@ -28,7 +28,7 @@ folder next to this one.
 | --- | --- | --- |
 | Start a wiki where none exists | Init | `../agent-wiki-init/SKILL.md` |
 | Know something the wiki might answer | Read | `../agent-wiki-read/SKILL.md` |
-| Add knowledge, put a document in, or correct a page | Write | `../agent-wiki-write/SKILL.md` |
+| Add knowledge, put a document or a new version of one in, or correct a page | Write | `../agent-wiki-write/SKILL.md` |
 | Check links, indexes, and file shapes | Lint | `../agent-wiki-lint/SKILL.md` |
 | Know what is missing, thin, or stale, or what to write next | Health | `../agent-wiki-health/SKILL.md` |
 
